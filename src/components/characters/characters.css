@@ -1,0 +1,16 @@
+.listOfCharecters
+{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+   
+
+}
+.charactersList{
+    margin-left: 2em;
+    border: 0.4em solid;
+    border-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+}
