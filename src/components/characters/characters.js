@@ -1,7 +1,7 @@
 import React from 'react';
-import "./characters.css"
+import "./Characters.css"
 import { getCharactersUrl } from '../../constants';
-import Character from './character';
+import Character from './Character';
 
 
 class MyComponent extends React.Component {
