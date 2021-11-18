@@ -1,16 +1,19 @@
 import React from 'react';
-import "./Characters.css"
+import "./characters.css"
 import { getCharactersUrl } from '../../constants';
 import Character from './Character';
+import ChangeCharacter from './ChangeCharacter';
+// import ChangeCharacter from './ChangeCharacter';
 
 
 class MyComponent extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+    
     };
   }
 
@@ -32,11 +35,19 @@ class MyComponent extends React.Component {
         }
       )
   }
+  
 
   handleRemoveCharacter = (item) =>
     this.setState({
       items: this.state.items.filter((i) => i.id !== item.id)
     })
+
+    updateCharacter = (key, updatedCharacter) => {
+      const character = {...this.state.items};
+      character[key] = updatedCharacter;
+      this.setState({character})
+
+ }
 
 
   render() {
@@ -48,8 +59,16 @@ class MyComponent extends React.Component {
     } else {
       return (
         <div className='listOfCharecters'>
+          
           {items.map(item => (
-            <Character key={item.id} item={item} onRemove={this.handleRemoveCharacter} />
+            <ChangeCharacter key={item.id} item={item}  name={item.name}
+            updateCharacter={this.updateCharacter}   />
+           
+          ))}
+          {items.map(item => (
+            <Character key={item.id} item={item} onRemove={this.handleRemoveCharacter} onChange={this.handleChange}
+           />
+
           ))}
         </div>
       );
