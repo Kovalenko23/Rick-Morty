@@ -3,7 +3,6 @@ import "./characters.css"
 import { getCharactersUrl } from '../../constants';
 import Character from './Character';
 import ChangeCharacter from './ChangeCharacter';
-// import ChangeCharacter from './ChangeCharacter';
 
 
 class MyComponent extends React.Component {
@@ -42,10 +41,11 @@ class MyComponent extends React.Component {
       items: this.state.items.filter((i) => i.id !== item.id)
     })
 
-    updateCharacter = (key, updatedCharacter) => {
-      const character = {...this.state.items};
-      character[key] = updatedCharacter;
-      this.setState({character})
+    updateCharacter = ( updatedCharacter) => {
+      const items = [...this.state.items];
+     const index=items.findIndex(item => item.id === updatedCharacter.id)
+      items[index] = updatedCharacter;
+      this.setState({items})
 
  }
 

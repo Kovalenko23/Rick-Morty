@@ -8,7 +8,7 @@
 
 }
 .charactersList{
-    margin-left: 2em;
+    margin-left: 1em;
     border: 0.4em solid;
     border-color: greenyellow;
     display: flex;
@@ -16,6 +16,5 @@
 }
 
 .charactersName{
-display:flex;
-width: 13em;
+
 }
