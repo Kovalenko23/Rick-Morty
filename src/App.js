@@ -1,5 +1,5 @@
 import React from 'react';
-import MyComponent from './components/characters/characters';
+import MyComponent from './components/characters/Characters';
 import './App.css';
 
 function App() {
